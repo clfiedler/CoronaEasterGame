@@ -261,10 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collectablePrefab: {fileID: 4408365958650675642, guid: 7c75b4d053eb8224886cafa828800208, type: 3}
   _collectableDelay: 1
-  _bombPrefab: {fileID: 7627785346309679489, guid: 7e50e6547a1db1c4a8c461a8c5f46454, type: 3}
+  _bombPrefab: {fileID: 8816300007156994875, guid: 125c168b28a0c7d4e84e77b35c00c7ce, type: 3}
   _bombDelay: 5
-  _speedyPrefab: {fileID: 7305411947221997065, guid: 3992d94d0268dc745aeb3299d7b02c9a, type: 3}
-  _speedyDelay: 3
 --- !u!1 &742726783
 GameObject:
   m_ObjectHideFlags: 0
