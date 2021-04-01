@@ -43,17 +43,17 @@ public class Player : MonoBehaviour
         // if player escapes to the left or right, it will appear on the other side
 
         // right side
-        if (transform.position.x > 10f)
+        if (transform.position.x > 10.2f)
         {
             //move player to the left side
-            transform.position = new Vector3(x: -10f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(x: -10.2f, transform.position.y, transform.position.z);
         }
 
         // left side
-        if (transform.position.x < -10f)
+        if (transform.position.x < -10.2f)
         {
             //move player to the right side
-            transform.position = new Vector3(x: 10f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(x: 10.2f, transform.position.y, transform.position.z);
         }
 
         // player should not move downwards
