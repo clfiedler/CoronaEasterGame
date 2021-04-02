@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Collect Falling Objects
+// Player in CoronaEasterGame
 public class Player : MonoBehaviour
 {
     [SerializeField]

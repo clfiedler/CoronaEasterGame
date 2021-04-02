@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents a basic collectable that gives 10 points when collected by the player
+/// </summary>
+
 public class Collectable : MonoBehaviour
 {
     [SerializeField]

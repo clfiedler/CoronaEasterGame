@@ -263,6 +263,8 @@ MonoBehaviour:
   _collectableDelay: 1
   _bombPrefab: {fileID: 8816300007156994875, guid: 125c168b28a0c7d4e84e77b35c00c7ce, type: 3}
   _bombDelay: 5
+  _speedyPrefab: {fileID: 2702592141439054360, guid: fef791d1ef2e951488b5613e92202bce, type: 3}
+  _speedyDelay: 3
 --- !u!1 &742726783
 GameObject:
   m_ObjectHideFlags: 0

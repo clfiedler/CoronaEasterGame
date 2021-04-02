@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Ground.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
+    <Compile Include="Assets\Scripts\Speedy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

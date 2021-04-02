@@ -19,6 +19,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float _bombDelay = 5f;
 
+    [SerializeField]
+    private GameObject _speedyPrefab;
+
+    [SerializeField]
+    private float _speedyDelay = 3f;
+
     private bool _spawningON = true;
 
     // Start is called before the first frame update
@@ -26,6 +32,7 @@ public class SpawnManager : MonoBehaviour
     {
         StartCoroutine(routine: CollectableSpawnSystem());
         StartCoroutine(routine: BombSpawnSystem());
+        StartCoroutine(routine: SpeedySpawnSytem());
     }
 
     // Update is called once per frame
@@ -36,7 +43,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator CollectableSpawnSystem()
     {
-        // spawn new collectibles 
+        // spawn new collectables 
         while (_spawningON)
         {
             Instantiate(_collectablePrefab, position: new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f), Quaternion.identity, this.transform);
@@ -53,6 +60,17 @@ public class SpawnManager : MonoBehaviour
             Instantiate(_bombPrefab, position: new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f), Quaternion.identity, this.transform);
             // wait for delay
             yield return new WaitForSeconds(_bombDelay);
+        }
+    }
+
+    IEnumerator SpeedySpawnSytem()
+    {
+        // spawn new speedy
+        while(_spawningON)
+        {
+            Instantiate(_speedyPrefab, position: new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f), Quaternion.identity, this.transform);
+            // wait for delay
+            yield return new WaitForSeconds(_speedyDelay);
         }
     }
 
