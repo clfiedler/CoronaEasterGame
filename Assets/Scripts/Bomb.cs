@@ -22,7 +22,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Obect moves down
+        // Object moves down
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 // Player in CoronaEasterGame
@@ -10,6 +11,13 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int _points = 0;
+
+    [SerializeField] 
+    private int _playerLives = 5;
+    
+    // reference to spawnmanager
+    [SerializeField] 
+    private SpawnManager _spawnManager;
 
     // Start is called before the first frame update
     void Start()
@@ -73,5 +81,37 @@ public class Player : MonoBehaviour
     public void CatchedSpeedy()
     {
         _points += 50;
+    }
+    
+    // damage function
+    // is activated when a minibomb collides with the player
+    // one life is lost per activation of the function
+    // if no life is left, the player dies
+    public void Damage()
+    {
+        // subtract one life
+        if (_playerLives > 0)
+        {
+            _playerLives -= 1; 
+        }
+
+        // if no lives are left, destroy the player and stop spawning
+        if (_playerLives == 0)
+        {
+            if (_spawnManager != null)
+            {
+                _spawnManager.onPlayerDeath(); 
+            }
+            
+            // destroy the player
+            Destroy(this.gameObject);
+            
+            // destroy the spawnmanager to destroy all instances of collectables and (mini)bombs
+            Destroy(_spawnManager.gameObject);
+            
+        }
+        
+        
+        
     }
 }

@@ -16,6 +16,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _bombPrefab;
 
+    [SerializeField] 
+    private GameObject _minibombPrefab;
+
+    [SerializeField]
+    private float _minibombDelay = 4f;
+    
     [SerializeField]
     private float _bombDelay = 5f;
 
@@ -33,6 +39,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(routine: CollectableSpawnSystem());
         StartCoroutine(routine: BombSpawnSystem());
         StartCoroutine(routine: SpeedySpawnSytem());
+        StartCoroutine(MiniBombSpawnSystem()); 
     }
 
     // Update is called once per frame
@@ -63,6 +70,18 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    IEnumerator MiniBombSpawnSystem()
+    {
+        // spawn new minibombs
+        while (_spawningON)
+        {
+            Instantiate(_minibombPrefab, new Vector3(Random.Range(-9.5f, 9.5f), 10f, 0f), Quaternion.identity,
+                this.transform);
+            // wait for delay
+            yield return new WaitForSeconds(_minibombDelay);
+        }
+    }
+
     IEnumerator SpeedySpawnSytem()
     {
         // spawn new speedy
@@ -72,6 +91,12 @@ public class SpawnManager : MonoBehaviour
             // wait for delay
             yield return new WaitForSeconds(_speedyDelay);
         }
+    }
+    
+    // public class to be accessed from player that sets spawning on or off
+    public void onPlayerDeath()
+    {
+        _spawningON = false;
     }
 
 }
