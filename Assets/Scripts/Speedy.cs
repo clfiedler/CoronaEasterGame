@@ -31,6 +31,7 @@ public class Speedy : MonoBehaviour
         {
             other.GetComponent<Player>().CatchedSpeedy();
             Destroy(this.gameObject);
+            FindObjectOfType<Score>().AddScore(50);
         }
 
         else if (other.CompareTag("Ground"))

@@ -31,7 +31,10 @@ public class Bomb : MonoBehaviour
         // If bomb touches player, it destroys player
         if (other.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
             Destroy(other.gameObject);
+            
+            //TODO evoke EndGame() method in GameManager
         }
 
         else if (other.CompareTag("Ground"))

@@ -10,17 +10,17 @@ public class Collectable : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 5f;
-
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Obect moves down
+        // Object moves down
         transform.Translate(Vector3.down * _speed * Time.deltaTime);            
 
     }
@@ -32,6 +32,7 @@ public class Collectable : MonoBehaviour
         {
             other.GetComponent<Player>().CatchedCollectable();
             Destroy(this.gameObject);
+            FindObjectOfType<Score>().AddScore(10);
         }
 
         else if(other.CompareTag("Ground"))
