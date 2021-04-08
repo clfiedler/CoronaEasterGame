@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44886076, g: 0.49535137, b: 0.55650955, a: 1}
+  m_IndirectSpecularColor: {r: 0.44886106, g: 0.49535155, b: 0.5565098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,13 +442,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collectablePrefab: {fileID: 4408365958650675642, guid: 7c75b4d053eb8224886cafa828800208, type: 3}
-  _collectableDelay: 1
   _bombPrefab: {fileID: 8816300007156994875, guid: 125c168b28a0c7d4e84e77b35c00c7ce, type: 3}
   _minibombPrefab: {fileID: 2577560350376355675, guid: 79c72191e75174860b4512b1c0da9055, type: 3}
+  _speedyPrefab: {fileID: 2702592141439054360, guid: fef791d1ef2e951488b5613e92202bce, type: 3}
+  _simpleLifePowerUpPrefab: {fileID: 1950460723465990422, guid: 49b5fe432745b452796128c51f637749, type: 3}
+  _fillUpLivesPowerUpPrefab: {fileID: 8833825526303212980, guid: be234938abc724a119e434796a9ce6a9, type: 3}
+  _timePowerUpPrefab: {fileID: 8006934820089655328, guid: 4e35f9fe84fd4427eacf064bbcfe89a8, type: 3}
+  _collectableDelay: 1
   _minibombDelay: 4
   _bombDelay: 5
-  _speedyPrefab: {fileID: 2702592141439054360, guid: fef791d1ef2e951488b5613e92202bce, type: 3}
   _speedyDelay: 3
+  _simpleLifePowerUpDelay: 8
+  _fillUpLivesPowerUpDelay: 10
+  _timePowerUpDelay: 8
 --- !u!1 &742726783
 GameObject:
   m_ObjectHideFlags: 0

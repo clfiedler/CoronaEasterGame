@@ -51,14 +51,14 @@ public class Timer : MonoBehaviour
 
             timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
-
-        //function called from other objects that are supposed to add/substract time
-        //for this use:
-        // in start: GameObject countdown = FindObjectOfType<Countdown>();
-        // in update countdown.addTime(float);
-        void AddTime(float timeToAdd)
-        {
-            this.timeLeft += timeToAdd;
-        }
+    }
+    
+    //function called from other objects that are supposed to add/substract time
+    //for this use:
+    // in start: GameObject countdown = FindObjectOfType<Countdown>();
+    // in update countdown.addTime(float);
+    public void AddTime(float timeToAdd)
+    {
+        this.timeLeft += timeToAdd;
     }
 }

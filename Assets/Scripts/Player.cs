@@ -82,6 +82,25 @@ public class Player : MonoBehaviour
     {
         _points += 50;
     }
+
+    public void CatchedSimpleLifePowerUp()
+    {
+        _playerLives += 1;
+    }
+
+    public void CatchedFillUpLivesPowerUp()
+    {
+        if (_playerLives < 5)
+        {
+            _playerLives = 5;
+        }
+    }
+
+    // CatchedTimePowerUp function adds 10 seconds to the remaining time
+    public void CatchedTimePowerUp()
+    {
+        FindObjectOfType<Timer>().AddTime(10);
+    }
     
     // damage function
     // is activated when a minibomb collides with the player

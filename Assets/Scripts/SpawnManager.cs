@@ -11,25 +11,43 @@ public class SpawnManager : MonoBehaviour
     private GameObject _collectablePrefab;
 
     [SerializeField]
-    private float _collectableDelay = 1f;
-
-    [SerializeField]
     private GameObject _bombPrefab;
 
     [SerializeField] 
     private GameObject _minibombPrefab;
+    
+    [SerializeField]
+    private GameObject _speedyPrefab;
+
+    [SerializeField] 
+    private GameObject _simpleLifePowerUpPrefab;
+
+    [SerializeField] 
+    private GameObject _fillUpLivesPowerUpPrefab;
+
+    [SerializeField] 
+    private GameObject _timePowerUpPrefab;
+
+    [SerializeField]
+    private float _collectableDelay = 1f;
 
     [SerializeField]
     private float _minibombDelay = 4f;
     
     [SerializeField]
     private float _bombDelay = 5f;
-
-    [SerializeField]
-    private GameObject _speedyPrefab;
-
+    
     [SerializeField]
     private float _speedyDelay = 3f;
+
+    [SerializeField] 
+    private float _simpleLifePowerUpDelay = 8f;
+
+    [SerializeField] 
+    private float _fillUpLivesPowerUpDelay = 10f;
+
+    [SerializeField] 
+    private float _timePowerUpDelay = 8f;
 
     private bool _spawningON = true;
 
@@ -39,7 +57,10 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(routine: CollectableSpawnSystem());
         StartCoroutine(routine: BombSpawnSystem());
         StartCoroutine(routine: SpeedySpawnSytem());
-        StartCoroutine(MiniBombSpawnSystem()); 
+        StartCoroutine(MiniBombSpawnSystem());
+        StartCoroutine(SimpleLifePowerUpSpawnSystem());
+        StartCoroutine(FillLivesUpPowerUpSpawnSystem());
+        StartCoroutine(TimePowerUpSpawnSystem());
     }
 
     // Update is called once per frame
@@ -90,6 +111,45 @@ public class SpawnManager : MonoBehaviour
             Instantiate(_speedyPrefab, position: new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f), Quaternion.identity, this.transform);
             // wait for delay
             yield return new WaitForSeconds(_speedyDelay);
+        }
+    }
+
+    IEnumerator SimpleLifePowerUpSpawnSystem()
+    {
+        while (_spawningON)
+        {
+            // wait for delay
+            yield return new WaitForSeconds(_simpleLifePowerUpDelay);
+        
+            // spawn new SimpleLifePowerUps
+            Instantiate(_simpleLifePowerUpPrefab, new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f),
+                Quaternion.identity, this.transform); 
+        }
+    }
+
+    IEnumerator FillLivesUpPowerUpSpawnSystem()
+    {
+        while (_spawningON)
+        {
+            // wait for delay
+            yield return new WaitForSeconds(_fillUpLivesPowerUpDelay);
+            
+            // spawn new FillUpLivesPowerUps
+            Instantiate(_fillUpLivesPowerUpPrefab, new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f),
+                Quaternion.identity, this.transform);
+        }
+    }
+
+    IEnumerator TimePowerUpSpawnSystem()
+    {
+        while (_spawningON)
+        {
+            // wait for delay
+            yield return new WaitForSeconds(_timePowerUpDelay);
+        
+            //spawn new TimePowerUps
+            Instantiate(_timePowerUpPrefab, new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f),
+                Quaternion.identity, this.transform);
         }
     }
     

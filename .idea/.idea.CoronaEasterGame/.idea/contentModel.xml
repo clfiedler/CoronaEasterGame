@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Hannah\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Hannah\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_CoronaEasterGame.1956343696.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Hannah\Documents\unity\CoronaChaosIntro\CoronaEasterGame" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Bomb.cs" t="Include" />
           <e p="Collectable.cs" t="Include" />
+          <e p="FillUpLivesPowerUp.cs" t="Include" />
           <e p="Ground.cs" t="Include" />
           <e p="Minibomb.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Score.cs" t="Include" />
+          <e p="SimpleLifePowerUp.cs" t="Include" />
           <e p="SpawnManager.cs" t="Include" />
           <e p="Speedy.cs" t="Include" />
+          <e p="TimePowerUp.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
+        </e>
+        <e p="ThirdParty" t="Include">
+          <e p="LivesPowerUpsAssets" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="CustomizablePowerUp.cs" t="Include" />
+              <e p="PowerUpManager.cs" t="Include" />
+              <e p="PowerUpRotation.cs" t="Include" />
+              <e p="ScaleParticles.cs" t="Include" />
+              <e p="TakeablePowerUp.cs" t="Include" />
+              <e p="Utility" t="Include">
+                <e p="Singleton.cs" t="Include" />
+              </e>
+            </e>
+          </e>
         </e>
       </e>
       <e p="CoronaEasterGame.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="Temp/Bin" t="ExcludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_CoronaEasterGame.-275166540.00" t="ExcludeRecursive" />
   </component>
 </project>
