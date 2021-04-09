@@ -7,7 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 8f;
+    private float _speed = 13f;
 
     [SerializeField]
     private int _points = 0;
