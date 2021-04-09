@@ -133,4 +133,20 @@ public class Player : MonoBehaviour
         
         
     }
+
+    // When the player gets hit by a bomb, it is instantly destroyed and the spwanmanager too
+    public void FatalDamage()
+    {
+        _playerLives = 0;
+        if (_spawnManager != null)
+        {
+            _spawnManager.onPlayerDeath();
+        }
+
+        // destroy the player
+        Destroy(this.gameObject);
+
+        // destroy the spawnmanager to destroy all instances of collectables and (mini)bombs
+        Destroy(_spawnManager.gameObject);
+    }
 }

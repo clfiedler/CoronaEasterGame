@@ -32,7 +32,7 @@ public class Bomb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GetComponent<AudioSource>().Play();
-            Destroy(other.gameObject);
+            other.GetComponent<Player>().FatalDamage();
             
             //TODO evoke EndGame() method in GameManager
         }

@@ -842,7 +842,7 @@ MonoBehaviour:
   _speed: 13
   _points: 0
   _playerLives: 5
-  _spawnManager: {fileID: 0}
+  _spawnManager: {fileID: 725883801}
 --- !u!54 &1438885809
 Rigidbody:
   m_ObjectHideFlags: 0
