@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
             GetComponent<AudioSource>().Play();
             other.GetComponent<Player>().FatalDamage();
             
-            //TODO evoke EndGame() method in GameManager
+            
         }
 
         else if (other.CompareTag("Ground"))

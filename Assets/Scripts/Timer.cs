@@ -38,7 +38,9 @@ public class Timer : MonoBehaviour
                 //necessary because time gets substracted in chunks
                 timeLeft = 0;
                 timerIsRunning = false;
-                //TODO call EndGame() function to end game
+                //loads game over screen
+                //call the function "GameOver()" in the object "GameManager"
+                GameObject.Find("GameManager").GetComponent<EndGame>().GameOver();
             }
         }
 

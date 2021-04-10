@@ -127,6 +127,8 @@ public class Player : MonoBehaviour
             
             // destroy the spawnmanager to destroy all instances of collectables and (mini)bombs
             Destroy(_spawnManager.gameObject);
+            //call the function "GameOver()" in the object "GameManager"
+            GameObject.Find("GameManager").GetComponent<EndGame>().GameOver();
             
         }
         
@@ -148,5 +150,8 @@ public class Player : MonoBehaviour
 
         // destroy the spawnmanager to destroy all instances of collectables and (mini)bombs
         Destroy(_spawnManager.gameObject);
+        //call the function "GameOver()" in the object "GameManager"
+        GameObject.Find("GameManager").GetComponent<EndGame>().GameOver();
+        
     }
 }
