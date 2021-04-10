@@ -19,6 +19,14 @@ public class Player : MonoBehaviour
     [SerializeField] 
     private SpawnManager _spawnManager;
 
+    // variables for timer and confusion
+    [SerializeField]
+    private float waitTime = 5.0f;
+
+    private float timer = 0.0f;
+
+    private bool _confused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +39,15 @@ public class Player : MonoBehaviour
         PlayerMovement();
 
         PlayerBoundaries();
+
+        // timer for confusion
+        timer += Time.deltaTime;
+
+        if (timer > waitTime)
+        {
+            _confused = false;
+            timer = timer - waitTime;
+        }
     }
 
 
@@ -40,10 +57,24 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
 
         // apply player movement
-        Vector3 playerTranslate = new Vector3(
+
+        // normal
+        if (_confused == false)
+        {
+            Vector3 playerTranslate = new Vector3(
             x: 1f * horizontalInput * _speed * Time.deltaTime,
             y: 0f, z: 0f);
-        transform.Translate(Vector3.right * Time.deltaTime * _speed * horizontalInput);
+            transform.Translate(Vector3.right * Time.deltaTime * _speed * horizontalInput);
+        }
+
+        else if (_confused == true)
+        {
+            Vector3 playerTranslate = new Vector3(
+            x: 1f * horizontalInput * _speed * Time.deltaTime,
+            y: 0f, z: 0f);
+            transform.Translate(Vector3.left * Time.deltaTime * _speed * horizontalInput);
+        }
+        
     }
 
     void PlayerBoundaries()
@@ -100,6 +131,12 @@ public class Player : MonoBehaviour
     public void CatchedTimePowerUp()
     {
         FindObjectOfType<Timer>().AddTime(10);
+    }
+
+    // Catched confusion changes movements for a time
+    public void ChangeConfused()
+    {
+        _confused = true;
     }
     
     // damage function
