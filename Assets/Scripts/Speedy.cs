@@ -29,6 +29,7 @@ public class Speedy : MonoBehaviour
         // if speedy collides with the player, the player gets 50 points
         if (other.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
             other.GetComponent<Player>().CatchedSpeedy();
             Destroy(this.gameObject);
             FindObjectOfType<Score>().AddScore(50);

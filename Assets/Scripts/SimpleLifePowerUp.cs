@@ -23,6 +23,9 @@ public class SimpleLifePowerUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // if SimpleLifePowerUp collides with the player,
+        // play SimpleLifePowerUpSound
+        GetComponent<AudioSource>().Play();
+         
         // one life is added to the player's lives
         if (other.CompareTag("Player"))
         {

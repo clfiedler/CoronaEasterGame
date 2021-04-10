@@ -9,6 +9,6 @@ public class EndGame : MonoBehaviour
         //TODO Delay this
         
         //load the end menu
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

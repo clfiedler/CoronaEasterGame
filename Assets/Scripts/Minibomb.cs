@@ -25,6 +25,8 @@ public class Minibomb : MonoBehaviour
         // If bomb touches player, it damages player
         if (other.CompareTag("Player"))
         {
+            // play minibomb sound
+            GetComponent<AudioSource>().Play();
             // damage player (make the player loose a life)
             other.GetComponent<Player>().Damage();
             // then destroy the minibomb

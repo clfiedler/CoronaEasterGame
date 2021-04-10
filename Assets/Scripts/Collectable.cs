@@ -27,6 +27,9 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // play collectable sound
+        GetComponent<AudioSource>().Play();
+        
         // if the collectable collides with the player, the player gets points
         if (other.CompareTag("Player"))
         {

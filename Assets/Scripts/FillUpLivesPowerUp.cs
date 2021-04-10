@@ -7,8 +7,11 @@ public class FillUpLivesPowerUp : MonoBehaviour
 {
     [SerializeField] 
     private float _speed = 6f;
+
+    [SerializeField] 
+    public AudioClip soundEffect;
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         
     }
@@ -25,6 +28,9 @@ public class FillUpLivesPowerUp : MonoBehaviour
         //if LivesFillUpPowerUp collides with the player,
         // and the number of lives is smaller than 5,
         // set the number of lives to 5 again
+        // play FillUpLivesPowerUpSound
+        GetComponent<AudioSource>().PlayOneShot(soundEffect, 5f);
+        
         if (other.CompareTag("Player"))
         {
             other.GetComponent<Player>().CatchedFillUpLivesPowerUp();
