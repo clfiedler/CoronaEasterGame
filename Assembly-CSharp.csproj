@@ -59,6 +59,9 @@
      <Compile Include="Assets\Scripts\SimpleLifePowerUp.cs" />
      <Compile Include="Assets\ThirdParty\LivesPowerUpsAssets\Scripts\TakeablePowerUp.cs" />
      <Compile Include="Assets\ThirdParty\LivesPowerUpsAssets\Scripts\Utility\Singleton.cs" />
+     <Compile Include="Assets\Scripts\BackgroundScale.cs" />
+     <Compile Include="Assets\Scripts\EndMenuScript.cs" />
+     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\ThirdParty\LivesPowerUpsAssets\Scripts\PowerUpRotation.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -69,11 +72,8 @@
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\Speedy.cs" />
      <Compile Include="Assets\ThirdParty\LivesPowerUpsAssets\Scripts\ScaleParticles.cs" />
-     <Compile Include="Assets\Scripts\Bomb.cs" />
-     <Compile Include="Assets\Scripts\BackgroundScale.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\EndGame.cs" />
-     <Compile Include="Assets\Scripts\EndMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Bomb.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
