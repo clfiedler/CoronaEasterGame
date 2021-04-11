@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     [SerializeField] 
     private SpawnManager _spawnManager;
 
+    // timer and confusion
+    private float waitTime = 4.0f;
+    private float timer = 0.0f;
+    private bool _confused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,15 @@ public class Player : MonoBehaviour
         PlayerMovement();
 
         PlayerBoundaries();
+
+        // timer for confusion
+        timer += Time.deltaTime;
+
+        if(timer > waitTime)
+        {
+            _confused = false;
+            timer = timer - waitTime;
+        }
     }
 
 
@@ -40,10 +54,25 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
 
         // apply player movement
-        Vector3 playerTranslate = new Vector3(
+
+        // normal
+        if(_confused == false)
+        {
+            Vector3 playerTranslate = new Vector3(
             x: 1f * horizontalInput * _speed * Time.deltaTime,
             y: 0f, z: 0f);
-        transform.Translate(Vector3.right * Time.deltaTime * _speed * horizontalInput);
+            transform.Translate(Vector3.right * Time.deltaTime * _speed * horizontalInput);
+        }
+
+        // confused
+        if (_confused == true)
+        {
+            Vector3 playerTranslate = new Vector3(
+            x: 1f * horizontalInput * _speed * Time.deltaTime,
+            y: 0f, z: 0f);
+            transform.Translate(Vector3.left * Time.deltaTime * _speed * horizontalInput);
+        }
+
     }
 
     void PlayerBoundaries()
@@ -64,11 +93,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(x: 10.2f, transform.position.y, transform.position.z);
         }
 
-        // player should not move downwards
-        //if (transform.position.y < 2.5f)
-        //{
-        //    transform.position = new Vector3(transform.position.x, y: 2.5f, z: 0f);
-        //}
+        
 
     }
 
@@ -81,6 +106,11 @@ public class Player : MonoBehaviour
     public void CatchedSpeedy()
     {
         _points += 50;
+    }
+
+    public void MakeConfused()
+    {
+        _confused = true;
     }
 
     public void CatchedSimpleLifePowerUp()

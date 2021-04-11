@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\StaticVar.cs" />
     <Compile Include="Assets\Scripts\Highscore.cs" />
+    <Compile Include="Assets\Scripts\Confusion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

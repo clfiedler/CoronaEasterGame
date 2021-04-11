@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class SpawnManager : MonoBehaviour
 {
+
+    [Header("Prafabs")]
     [SerializeField]
     private GameObject _collectablePrefab;
 
@@ -29,6 +31,11 @@ public class SpawnManager : MonoBehaviour
     private GameObject _timePowerUpPrefab;
 
     [SerializeField]
+    private GameObject _confusionPrefab;
+
+
+    [Header("Delays")]
+    [SerializeField]
     private float _collectableDelay = 1f;
 
     [SerializeField]
@@ -49,6 +56,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] 
     private float _timePowerUpDelay = 8f;
 
+    [SerializeField]
+    private float _confusionDelay = 7f;
+
     private bool _spawningON = true;
 
     // Start is called before the first frame update
@@ -61,6 +71,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SimpleLifePowerUpSpawnSystem());
         StartCoroutine(FillLivesUpPowerUpSpawnSystem());
         StartCoroutine(TimePowerUpSpawnSystem());
+        StartCoroutine(routine: ConfusionSpawnSystem());
     }
 
     // Update is called once per frame
@@ -152,7 +163,18 @@ public class SpawnManager : MonoBehaviour
                 Quaternion.identity, this.transform);
         }
     }
-    
+
+    IEnumerator ConfusionSpawnSystem()
+    {
+        // spawn new confusion 
+        while (_spawningON)
+        {
+            Instantiate(_confusionPrefab, position: new Vector3(x: Random.Range(-9.5f, 9.5f), y: 10f, z: 0f), Quaternion.identity, this.transform);
+            // wait for delay
+            yield return new WaitForSeconds(_confusionDelay);
+        }
+    }
+
     // public class to be accessed from player that sets spawning on or off
     public void onPlayerDeath()
     {

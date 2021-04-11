@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44886076, g: 0.49535137, b: 0.55650955, a: 1}
+  m_IndirectSpecularColor: {r: 0.44886076, g: 0.49535137, b: 0.5565096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -463,6 +463,7 @@ MonoBehaviour:
   _simpleLifePowerUpPrefab: {fileID: 1950460723465990422, guid: 49b5fe432745b452796128c51f637749, type: 3}
   _fillUpLivesPowerUpPrefab: {fileID: 8833825526303212980, guid: be234938abc724a119e434796a9ce6a9, type: 3}
   _timePowerUpPrefab: {fileID: 8006934820089655328, guid: 4e35f9fe84fd4427eacf064bbcfe89a8, type: 3}
+  _confusionPrefab: {fileID: 3209955916136705683, guid: 712d90bd31a0dba47bbde48bbb8592b8, type: 3}
   _collectableDelay: 1
   _minibombDelay: 4
   _bombDelay: 5
@@ -470,6 +471,7 @@ MonoBehaviour:
   _simpleLifePowerUpDelay: 8
   _fillUpLivesPowerUpDelay: 10
   _timePowerUpDelay: 8
+  _confusionDelay: 7
 --- !u!1 &742726783
 GameObject:
   m_ObjectHideFlags: 0
