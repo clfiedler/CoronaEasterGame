@@ -6,6 +6,8 @@ public class Minibomb : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 5f;
+    
+    public AudioClip MinibombSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class Minibomb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // play minibomb sound
-            GetComponent<AudioSource>().Play();
+            SoundManager.Instance.Play(MinibombSound);
             // damage player (make the player loose a life)
             other.GetComponent<Player>().Damage();
             // then destroy the minibomb

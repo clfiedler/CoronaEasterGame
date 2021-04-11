@@ -17,6 +17,7 @@
           <e p="Player.cs" t="Include" />
           <e p="Score.cs" t="Include" />
           <e p="SimpleLifePowerUp.cs" t="Include" />
+          <e p="SoundManager.cs" t="Include" />
           <e p="SpawnManager.cs" t="Include" />
           <e p="Speedy.cs" t="Include" />
           <e p="TimePowerUp.cs" t="Include" />

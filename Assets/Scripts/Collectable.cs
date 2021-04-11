@@ -10,6 +10,8 @@ public class Collectable : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 5f;
+
+    public AudioClip CollectableSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,12 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // play collectable sound
-        GetComponent<AudioSource>().Play();
-        
         // if the collectable collides with the player, the player gets points
         if (other.CompareTag("Player"))
         {
+            // play collectable sound
+            SoundManager.Instance.Play(CollectableSound);
+            
             other.GetComponent<Player>().CatchedCollectable();
             Destroy(this.gameObject);
             FindObjectOfType<Score>().AddScore(10);

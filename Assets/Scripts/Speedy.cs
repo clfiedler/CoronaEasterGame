@@ -11,6 +11,8 @@ public class Speedy : MonoBehaviour
     [SerializeField]
     private float _speed = 10f;
 
+    public AudioClip SpeedySound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,9 @@ public class Speedy : MonoBehaviour
         // if speedy collides with the player, the player gets 50 points
         if (other.CompareTag("Player"))
         {
-            GetComponent<AudioSource>().Play();
+            // play speedy sound
+            SoundManager.Instance.Play(SpeedySound);
+            
             other.GetComponent<Player>().CatchedSpeedy();
             Destroy(this.gameObject);
             FindObjectOfType<Score>().AddScore(50);

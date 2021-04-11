@@ -7,6 +7,9 @@ public class TimePowerUp : MonoBehaviour
 {
     [SerializeField] 
     private float _speed = 5f;
+
+    public AudioClip TimePowerUpSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,9 @@ public class TimePowerUp : MonoBehaviour
         // 10 seconds are added to the countdown
         if (other.CompareTag("Player"))
         {
+            // play TimePowerUpSound
+            SoundManager.Instance.Play(TimePowerUpSound);
+            
             other.GetComponent<Player>().CatchedTimePowerUp();
             Destroy(this.gameObject);
         }

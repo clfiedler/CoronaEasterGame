@@ -13,6 +13,8 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private float _speed = 5f;
 
+    public AudioClip BombSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,8 @@ public class Bomb : MonoBehaviour
         // If bomb touches player, it destroys player
         if (other.CompareTag("Player"))
         {
-            GetComponent<AudioSource>().Play();
+            // play bomb sound
+            SoundManager.Instance.Play(BombSound);
             other.GetComponent<Player>().FatalDamage();
             
             
