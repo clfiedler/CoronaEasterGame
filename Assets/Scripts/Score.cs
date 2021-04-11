@@ -26,4 +26,9 @@ public class Score : MonoBehaviour
     {
         this.score += scoreToAdd;
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
 }

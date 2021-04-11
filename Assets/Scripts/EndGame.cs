@@ -7,8 +7,8 @@ public class EndGame : MonoBehaviour
     public void GameOver()
     {
         //TODO Delay this
-        
-        //load the end menu
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        StaticVar.scoreSave = FindObjectOfType<Score>().GetScore();
+        //load the highscore
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

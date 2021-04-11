@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private int _points = 0;
 
     [SerializeField] 
-    private int _playerLives = 5;
+    public int _playerLives = 5;
     
     // reference to spawnmanager
     [SerializeField] 
@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     public void CatchedSimpleLifePowerUp()
     {
         _playerLives += 1;
+        FindObjectOfType<DisplayLives>().UpdateLives(-1);
     }
 
     public void CatchedFillUpLivesPowerUp()
@@ -93,6 +94,8 @@ public class Player : MonoBehaviour
         if (_playerLives < 5)
         {
             _playerLives = 5;
+            FindObjectOfType<DisplayLives>().SetLives(5);
+            
         }
     }
 
@@ -111,7 +114,8 @@ public class Player : MonoBehaviour
         // subtract one life
         if (_playerLives > 0)
         {
-            _playerLives -= 1; 
+            _playerLives -= 1;
+            FindObjectOfType<DisplayLives>().UpdateLives(-1);
         }
 
         // if no lives are left, destroy the player and stop spawning
