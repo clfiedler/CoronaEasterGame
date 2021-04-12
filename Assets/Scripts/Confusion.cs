@@ -6,6 +6,8 @@ public class Confusion : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 5f;
+    
+    public AudioClip ConfusionSound;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class Confusion : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            // play Confusion sound
+            SoundManager.Instance.Play(ConfusionSound);
             other.GetComponent<Player>().MakeConfused();
             Destroy(this.gameObject);
         }

@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  ConfusionSound: {fileID: 8300000, guid: a88f95669e5710245880b9d6998805d9, type: 3}
