@@ -33,6 +33,8 @@ public static class Highscore {
             return entriesList;
         }
     }
+
+    
  
     private const string Key = "highscore";
     
@@ -42,8 +44,8 @@ public static class Highscore {
     }
  
     public static void LoadScores() {
-        //delete, what is currently saved
-        entriesList.Clear();
+        //create new list
+        entriesList = new List<ScoreEntry>();
         
         //iterate from 0 till the number of entries
         for (int i = 0; i < EntryCount; ++i) {

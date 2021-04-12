@@ -6,6 +6,7 @@ using UnityEngine;
 // Player in CoronaEasterGame
 public class Player : MonoBehaviour
 {
+    
     [SerializeField]
     private float _speed = 13f;
 
@@ -15,9 +16,12 @@ public class Player : MonoBehaviour
     [SerializeField] 
     public int _playerLives = 5;
     
+    
     // reference to spawnmanager
     [SerializeField] 
     private SpawnManager _spawnManager;
+
+    public HealthBar healthBar;
 
     // timer and confusion
     private float waitTime = 4.0f;
@@ -96,6 +100,11 @@ public class Player : MonoBehaviour
         
 
     }
+    
+    public int GetLives()
+    {
+        return _playerLives;
+    }
 
    
     public void CatchedCollectable()
@@ -116,7 +125,7 @@ public class Player : MonoBehaviour
     public void CatchedSimpleLifePowerUp()
     {
         _playerLives += 1;
-        FindObjectOfType<DisplayLives>().UpdateLives(-1);
+        healthBar.LowerHealth(-1);
     }
 
     public void CatchedFillUpLivesPowerUp()
@@ -124,7 +133,8 @@ public class Player : MonoBehaviour
         if (_playerLives < 5)
         {
             _playerLives = 5;
-            FindObjectOfType<DisplayLives>().SetLives(5);
+            healthBar.SetHealth(5);
+            //FindObjectOfType<DisplayLives>().SetLives(5);
             
         }
     }
@@ -145,7 +155,8 @@ public class Player : MonoBehaviour
         if (_playerLives > 0)
         {
             _playerLives -= 1;
-            FindObjectOfType<DisplayLives>().UpdateLives(-1);
+            healthBar.LowerHealth(1);
+            //FindObjectOfType<DisplayLives>().UpdateLives(-1);
         }
 
         // if no lives are left, destroy the player and stop spawning
@@ -188,4 +199,6 @@ public class Player : MonoBehaviour
         GameObject.Find("GameManager").GetComponent<EndGame>().GameOver();
         
     }
+
+    
 }

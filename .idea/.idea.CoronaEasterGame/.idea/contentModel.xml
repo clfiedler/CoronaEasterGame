@@ -10,13 +10,15 @@
           <e p="BackgroundScale.cs" t="Include" />
           <e p="Bomb.cs" t="Include" />
           <e p="Collectable.cs" t="Include" />
+          <e p="Confusion.cs" t="Include" />
           <e p="DisplayHighscore.cs" t="Include" />
-          <e p="DisplayLives.cs" t="Include" />
           <e p="EndGame.cs" t="Include" />
           <e p="EndMenuScript.cs" t="Include" />
           <e p="FillUpLivesPowerUp.cs" t="Include" />
           <e p="Ground.cs" t="Include" />
+          <e p="HealthBar.cs" t="Include" />
           <e p="Highscore.cs" t="Include" />
+          <e p="HighscoreMenu.cs" t="Include" />
           <e p="MainMenuScript.cs" t="Include" />
           <e p="Minibomb.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -41,6 +43,16 @@
                 <e p="Singleton.cs" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="Turntable_platforms" t="Include">
+          <e p="GodRays" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ScrollBehaviour.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Materials" t="Include">
+            <e p="Cutout_2Sided.shader" t="Include" />
           </e>
         </e>
       </e>
