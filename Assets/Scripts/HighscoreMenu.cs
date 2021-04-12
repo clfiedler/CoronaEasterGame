@@ -7,8 +7,10 @@ using UnityEngine.UIElements;
 
 public class HighscoreMenu : MonoBehaviour
 {
-    [SerializeField]
-    public TextField textfield;
+    //[SerializeField]
+    //public TextField textfield;
+
+    public InputField inputField;
     private string playerName;
     
     
@@ -24,7 +26,11 @@ public class HighscoreMenu : MonoBehaviour
         PlayerPrefs.DeleteAll();
         //load highscore
         Highscore.LoadScores();
+        //reload scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
+
+    
 
     public void QuitButton()
     {
@@ -35,7 +41,12 @@ public class HighscoreMenu : MonoBehaviour
 
     public void EnterButton()
     {
-        playerName = textfield.text;
-        Debug.Log(playerName);
+        playerName = inputField.text;
+        //save new score and name
+        Highscore.Record(playerName, StaticVar.scoreSave);
+        //set score to 0, so we do not get stuck in a loop of adding the highscore
+        StaticVar.scoreSave = 0;
+        //reload scene to display changes
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

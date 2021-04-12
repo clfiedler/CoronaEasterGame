@@ -6,9 +6,9 @@ public class EndGame : MonoBehaviour
 {
     public void GameOver()
     {
-        //TODO Delay this
+        //save score
         StaticVar.scoreSave = FindObjectOfType<Score>().GetScore();
-        //load the highscore
+        //load the highscore scene
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

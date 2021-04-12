@@ -57,6 +57,12 @@ public class MainMenuScript : MonoBehaviour
         Instructions.SetActive(false);
         
     }
+    
+    public void HighscoreButton()
+    {
+        StaticVar.scoreSave = 0;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
 
     
     

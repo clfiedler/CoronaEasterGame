@@ -11,7 +11,7 @@ public static class Highscore {
         public string name;
         public int score;
  
-        //creating an instance of custom variable type
+        //creating custom variable type
         public ScoreEntry(string name, int score) {
             this.name = name;
             this.score = score;
@@ -35,7 +35,7 @@ public static class Highscore {
     }
 
     
- 
+    //key needed to save and retrive entries from player prefs 
     private const string Key = "highscore";
     
     //method sorts the highscore by value
@@ -51,7 +51,7 @@ public static class Highscore {
         for (int i = 0; i < EntryCount; ++i) {
             ScoreEntry entry;
             //if there is an entry, add it to the list
-            //if there is none, add("",0)
+            //if there is none, add("None",0)
             entry.name = PlayerPrefs.GetString(Key + "[" + i + "].name", "None");
             entry.score = PlayerPrefs.GetInt(Key + "[" + i + "].score", 0);
             //save every entry in the list
@@ -61,6 +61,7 @@ public static class Highscore {
         SortScores();
     }
  
+    //...saves the score (in player prefs) 
     private static void SaveScores() {
         //iterate through list
         for (int i = 0; i < EntryCount; ++i) {
@@ -78,7 +79,7 @@ public static class Highscore {
         return Entries[index];
     }
  
-    //adds string and score to lsit
+    //saves name and score in the playerprefs
     public static void Record(string name, int score) {
         //add new entry
         Entries.Add(new ScoreEntry(name, score));
@@ -89,8 +90,9 @@ public static class Highscore {
         SaveScores();
     }
     
-    //checks if a given new score needs to be added to highscores.
+    //checks if a given new score needs to be added to highscore
     public static bool CheckScore(int currentScore) {
+        //iterate through every entry to see if one is lower
         for (int i = 0; i < EntryCount; ++i) {
             if(Entries[i].score < currentScore)
             {
